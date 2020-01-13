@@ -1,0 +1,57 @@
+<html>
+<body bgcolor='lightyellow'>
+<center>
+<p>DIV:</p>
+<p ><textarea id='demo' rows='1' cols='20'></textarea></p>
+<table border='5' cellpadding='25' cellspacing='25'  width='100' rules='all' ><br>
+<tr>
+<td bgcolor='pink' onclick="call('1')" name='1' value='1' id='1' ><b><font color='brown' size='8' face='arial'>1</b></td>
+<td bgcolor='pink' onclick="call('2')" name='2' value='2' id='2'><b><font color='brown' size='8' face='arial'>2</b></td>
+<td bgcolor='pink' onclick="call('3')" name='3' value='3' id='3'><b><font color='brown' size='8' face='arial'>3</b></td>
+</tr>
+<tr>
+<td bgcolor='pink' onclick="call('4')" name='4' value='4' id='4'><b><font color='brown' size='8' face='arial'>4</b></td>
+<td bgcolor='pink' onclick="call('5')" name='5' value='5' id='5'><b><font color='brown' size='8' face='arial'>5</b></td>
+<td bgcolor='pink' onclick="call('6')" name='6' value='6' id='6'><b><font color='brown' size='8' face='arial'>6</b></td>
+</tr>
+<tr>
+<td bgcolor='pink' onclick="call('7')" name='7' value='7' id='7'><b><font color='brown' size='8' face='arial'>7</b></td>
+<td bgcolor='pink' onclick="call('8')" name='8' value='8' id='8'><b><font color='brown' size='8' face='arial'>8</b></td>
+<td bgcolor='pink' onclick="call('9')" name='9' value='9' id='9'><b><font color='brown' size='8' face='arial'>9</b></td>
+</tr>
+<tr>
+<td ></td>
+<td bgcolor='pink' onclick="call('0')" name='0' value='0' id='0'><b><font color='brown' size='8' face='arial'>0</b></td>
+<td ></td>
+</tr>
+</table><br>
+<p><input type='button' onclick="call('clear')" name='clear' value='clear' id='clear'></input></p><br>
+<p><input type='button' onclick='backspace()' name='back' value='back' id='back' ></input></p>
+<script>
+var code="";
+var count1=0;
+function call(key){
+if(key=='clear'){
+code="";
+count1=0;
+var r=document.getElementById('demo');
+r.innerHTML="";
+}else{
+count1=count1+1;
+if(count1<5){
+code = code+key;
+document.getElementById('demo').innerHTML=code;
+}else{
+code="";
+count1=0;
+var element=document.getElementById('demo');
+element.innerHTML="!!INVALID CODE!!";
+}
+}}
+function backspace(){
+l=code.length
+code=code.substr(0,l-1)
+var r=document.getElementById('demo');
+r.innerHTML=code;
+}
+</script>
